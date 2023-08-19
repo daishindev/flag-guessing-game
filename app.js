@@ -8,6 +8,7 @@ let pointsP = document.querySelector(".pointsP");
 let livesP = document.querySelector(".livesP");
 let countryList = document.getElementById("countryList");
 let bottomUI = document.querySelector(".bottomUI");
+let wrongAudio = new Audio("wrong.mp3");
 let answerCommonName;
 let answerOffName;
 let guessAnswer;
@@ -76,6 +77,7 @@ shakeText = () => {
   livesP.style.animation = "none";
   livesP.offsetHeight;
   livesP.style.animation = "fastShakeAnim 0.3s ease 0s 1 forwards";
+  wrongAudio.play();
 };
 
 function handleSubmit() {
