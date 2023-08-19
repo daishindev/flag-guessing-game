@@ -14,6 +14,7 @@ body {
   -moz-animation: animatedBg 30s ease infinite;
   -o-animation: animatedBg 30s ease infinite;
   animation: animatedBg 30s ease infinite;
+  overflow: hidden;
 }
 
 @-webkit-keyframes animatedBg {
@@ -188,5 +189,19 @@ button:hover {
 
   75% {
     transform: translateX(-2px) rotate(0.2deg);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  body {
+    background: none;
+    background-color: #f6d55c;
+  }
+  .container {
+    width: 100%;
+    padding: 2rem 0rem;
+  }
+  input {
+    width: 80%;
   }
 }
