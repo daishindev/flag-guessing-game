@@ -15,7 +15,7 @@
           <p class="livesP"></p>
         </div>
 
-        <button id="startGameButton" onClick="startNewGame()">
+        <button id="startGameButton" onClick="initializeGame()">
           Start New Game
         </button>
         <div class="showFlag">
@@ -26,6 +26,19 @@
           <datalist id="countryList"></datalist>
 
           <button id="submitButton" onClick="handleSubmit()">Submit</button>
+        </div>
+      </div>
+      <div class="gameOverScreen">
+        <div class="gameOverContainer">
+          <div class="gameOverText">
+            <h1>YOU LOST</h1>
+          </div>
+          <div class="tryAgainDiv">
+            <p>TRY AGAIN?</p>
+            <button id="restartButton" onClick="restartGame()">
+              Restart Game
+            </button>
+          </div>
         </div>
       </div>
     </section>

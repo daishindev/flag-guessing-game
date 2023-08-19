@@ -1,26 +1,34 @@
+//DOM elements
 let showFlag = document.querySelector(".showFlag");
 let flagImg = document.querySelector(".flagImg");
 let flagP = document.querySelector(".flagP");
 let guessInput = document.getElementById("guessInput");
 let submitButton = document.getElementById("submitButton");
 let startGameButton = document.getElementById("startGameButton");
+let restartButton = document.getElementById("restartButton");
 let pointsP = document.querySelector(".pointsP");
 let livesP = document.querySelector(".livesP");
 let countryList = document.getElementById("countryList");
 let bottomUI = document.querySelector(".bottomUI");
-let wrongAudio = new Audio("wrong.mp3");
+let wrongAudio = new Audio("src/wrong.mp3");
+let gameOverScreen = document.querySelector(".gameOverScreen");
+gameOverScreen.style.display = "none";
+
+//Game variables
 let answerCommonName;
 let answerOffName;
 let guessAnswer;
 let points;
 let lives;
 
+//Sets defaul points count
 setDefaultPoints = () => {
   points = 0;
   lives = 3;
 };
 
-async function startNewGame() {
+//initializes the game
+async function initializeGame() {
   let randomNumber = Math.floor(Math.random() * 251);
   const response = await axios.get("https://restcountries.com/v3.1/all");
   const data = response.data;
@@ -52,7 +60,12 @@ async function startNewGame() {
   livesP.innerText = "Lives: " + lives;
   pointsP.innerText = "Points: " + points;
 }
-
+//restart game function
+async function restartGame() {
+  initializeGame();
+  gameOverScreen.style.display = "none";
+}
+//fetches new data, separate because i call it when the answer is correct
 async function fetchNewData() {
   try {
     let randomNumber = Math.floor(Math.random() * 251);
@@ -73,6 +86,7 @@ async function fetchNewData() {
   }
 }
 
+//shake animation
 shakeText = () => {
   livesP.style.animation = "none";
   livesP.offsetHeight;
@@ -92,6 +106,14 @@ function handleSubmit() {
       fetchNewData();
       points++;
       pointsP.innerText = "Points: " + points;
+      const correctAnswerP = document.createElement("p");
+      correctAnswerP.classList.add("correctAnswerP");
+      correctAnswerP.textContent =
+        "Yes! It was " + answerCommonName.toUpperCase();
+      showFlag.appendChild(correctAnswerP);
+      setTimeout(function () {
+        correctAnswerP.remove();
+      }, 1000);
     } else {
       console.log("Nothing happened");
       console.log(guessInputAnswer);
@@ -100,7 +122,7 @@ function handleSubmit() {
       livesP.innerText = "Lives: " + lives;
       shakeText();
       if (lives == 0) {
-        alert("You lost!");
+        gameOverScreen.style.display = "flex";
         guessInput.disabled = true;
         submitButton.disabled = true;
         startGameButton.style.display = "block";
@@ -108,6 +130,8 @@ function handleSubmit() {
     }
   }
 }
+
+//when enter is pressed, it Submits
 guessInput.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
     e.preventDefault();
