@@ -17,50 +17,6 @@ body {
   overflow: hidden;
 }
 
-@-webkit-keyframes animatedBg {
-  0% {
-    background-position: 78% 0%;
-  }
-  50% {
-    background-position: 23% 100%;
-  }
-  100% {
-    background-position: 78% 0%;
-  }
-}
-@-moz-keyframes animatedBg {
-  0% {
-    background-position: 78% 0%;
-  }
-  50% {
-    background-position: 23% 100%;
-  }
-  100% {
-    background-position: 78% 0%;
-  }
-}
-@-o-keyframes animatedBg {
-  0% {
-    background-position: 78% 0%;
-  }
-  50% {
-    background-position: 23% 100%;
-  }
-  100% {
-    background-position: 78% 0%;
-  }
-}
-@keyframes animatedBg {
-  0% {
-    background-position: 78% 0%;
-  }
-  50% {
-    background-position: 23% 100%;
-  }
-  100% {
-    background-position: 78% 0%;
-  }
-}
 section#gameContainer {
   height: 100vh;
   display: flex;
@@ -73,7 +29,7 @@ h1 {
   font-size: 3rem;
   font-family: "Barriecito", "Poppins", sans-serif;
   color: #10293d;
-  animation: myAnim 4s ease 0s infinite forwards;
+  animation: shakeAnim 4s ease 0s infinite forwards;
   text-align: center;
 }
 
@@ -149,6 +105,51 @@ button:hover {
   outline-offset: 0.2rem;
 }
 
+@-webkit-keyframes animatedBg {
+  0% {
+    background-position: 78% 0%;
+  }
+  50% {
+    background-position: 23% 100%;
+  }
+  100% {
+    background-position: 78% 0%;
+  }
+}
+@-moz-keyframes animatedBg {
+  0% {
+    background-position: 78% 0%;
+  }
+  50% {
+    background-position: 23% 100%;
+  }
+  100% {
+    background-position: 78% 0%;
+  }
+}
+@-o-keyframes animatedBg {
+  0% {
+    background-position: 78% 0%;
+  }
+  50% {
+    background-position: 23% 100%;
+  }
+  100% {
+    background-position: 78% 0%;
+  }
+}
+@keyframes animatedBg {
+  0% {
+    background-position: 78% 0%;
+  }
+  50% {
+    background-position: 23% 100%;
+  }
+  100% {
+    background-position: 78% 0%;
+  }
+}
+
 @keyframes outlineAnim {
   0% {
     outline-offset: 1rem;
@@ -164,7 +165,7 @@ button:hover {
   }
 }
 
-@keyframes myAnim {
+@keyframes shakeAnim {
   0%,
   100% {
     transform: translateX(0%);
@@ -172,23 +173,40 @@ button:hover {
   }
 
   15% {
-    transform: translateX(-3px) rotate(-1deg);
+    transform: rotate(-1deg);
   }
 
   30% {
-    transform: translateX(3px) rotate(1deg);
+    transform: rotate(1deg);
   }
 
   45% {
-    transform: translateX(-4px) rotate(-0.6deg);
+    transform: rotate(-0.6deg);
   }
 
   60% {
-    transform: translateX(-3px) rotate(0.4deg);
+    transform: rotate(0.4deg);
   }
 
   75% {
-    transform: translateX(-2px) rotate(0.2deg);
+    transform: rotate(0.2deg);
+  }
+}
+@keyframes fastShakeAnim {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 

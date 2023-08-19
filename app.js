@@ -72,6 +72,12 @@ async function fetchNewData() {
   }
 }
 
+shakeText = () => {
+  livesP.style.animation = "none";
+  livesP.offsetHeight;
+  livesP.style.animation = "fastShakeAnim 0.3s ease 0s 1 forwards";
+};
+
 function handleSubmit() {
   guessInputAnswer = guessInput.value.toLowerCase();
   if (guessInputAnswer != "") {
@@ -90,6 +96,7 @@ function handleSubmit() {
       console.log(answerCommonName);
       lives--;
       livesP.innerText = "Lives: " + lives;
+      shakeText();
       if (lives == 0) {
         alert("You lost!");
         guessInput.disabled = true;
@@ -99,3 +106,9 @@ function handleSubmit() {
     }
   }
 }
+guessInput.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    submitButton.click();
+  }
+});
