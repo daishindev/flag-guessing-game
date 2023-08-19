@@ -22,7 +22,12 @@
           <img src="" alt="" class="flagImg" />
         </div>
         <div class="bottomUI">
-          <input type="text" id="guessInput" list="countryList" />
+          <input
+            type="text"
+            id="guessInput"
+            list="countryList"
+            autocomplete="off"
+          />
           <datalist id="countryList"></datalist>
 
           <button id="submitButton" onClick="handleSubmit()">Submit</button>
@@ -31,6 +36,7 @@
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
