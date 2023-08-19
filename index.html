@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="gameContainer">
+      <div class="title"><h1>GUESS THE FLAG!</h1></div>
+      <div class="container">
+        <div class="upperUI">
+          <p class="pointsP"></p>
+          <p class="livesP"></p>
+        </div>
+
+        <button id="startGameButton" onClick="startNewGame()">
+          Start New Game
+        </button>
+        <div class="showFlag">
+          <img src="" alt="" class="flagImg" />
+        </div>
+        <div class="bottomUI">
+          <input type="text" id="guessInput" list="countryList" />
+          <datalist id="countryList"></datalist>
+
+          <button id="submitButton" onClick="handleSubmit()">Submit</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

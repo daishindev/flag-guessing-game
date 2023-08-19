@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(221deg, #f5f8fa, #d2eec7);
+  background-size: 400% 400%;
+
+  -webkit-animation: animatedBg 30s ease infinite;
+  -moz-animation: animatedBg 30s ease infinite;
+  -o-animation: animatedBg 30s ease infinite;
+  animation: animatedBg 30s ease infinite;
+}
+
+@-webkit-keyframes animatedBg {
+  0% {
+    background-position: 78% 0%;
+  }
+  50% {
+    background-position: 23% 100%;
+  }
+  100% {
+    background-position: 78% 0%;
+  }
+}
+@-moz-keyframes animatedBg {
+  0% {
+    background-position: 78% 0%;
+  }
+  50% {
+    background-position: 23% 100%;
+  }
+  100% {
+    background-position: 78% 0%;
+  }
+}
+@-o-keyframes animatedBg {
+  0% {
+    background-position: 78% 0%;
+  }
+  50% {
+    background-position: 23% 100%;
+  }
+  100% {
+    background-position: 78% 0%;
+  }
+}
+@keyframes animatedBg {
+  0% {
+    background-position: 78% 0%;
+  }
+  50% {
+    background-position: 23% 100%;
+  }
+  100% {
+    background-position: 78% 0%;
+  }
+}
+section#gameContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "Barriecito", "Poppins", sans-serif;
+  color: #10293d;
+  animation: myAnim 4s ease 0s infinite forwards;
+}
+
+.container {
+  width: 33rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+  margin-top: 3rem;
+  outline: #ed553b dashed 2px;
+  outline-offset: 1rem;
+  border-radius: 0.625rem;
+  background-color: #f6d55c;
+  transition: all 0.3s;
+  animation: outlineAnim 7s ease infinite;
+}
+
+.upperUI {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #10293d;
+}
+
+.bottomUI {
+  width: 100%;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+
+.showFlag > img {
+  width: 300px;
+  border-radius: 0.625rem;
+}
+
+input {
+  width: 100%;
+  padding: 1rem 0.7rem;
+  border-radius: 0.3125rem;
+  outline: none;
+  border: none;
+  color: #f6d55c;
+  font-size: 1rem;
+  background-color: #2f7bb9;
+}
+
+input:disabled {
+  background-color: #ccdce9;
+}
+button {
+  padding: 0.7rem 4rem;
+  background-color: #2f7bb9;
+  color: #f6d55c;
+  border: none;
+  border-radius: 0.3125rem;
+  font-size: 1.2rem;
+  transition: 0.3s all;
+  outline: #bb9a07 2px dashed;
+  outline-offset: 0.1rem;
+}
+button:disabled {
+  background-color: #ccdce9;
+}
+
+button:hover {
+  scale: 1.1;
+  outline: #bb3107 2px dashed;
+  outline-offset: 0.2rem;
+}
+
+@keyframes outlineAnim {
+  0% {
+    outline-offset: 1rem;
+    outline-style: dashed;
+  }
+  50% {
+    outline-offset: 0.5rem;
+    outline-style: dotted;
+  }
+  100% {
+    outline-offset: 1rem;
+    outline-style: dashed;
+  }
+}
+
+@keyframes myAnim {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 40% 40%;
+  }
+
+  15% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+
+  30% {
+    transform: translateX(3px) rotate(1deg);
+  }
+
+  45% {
+    transform: translateX(-4px) rotate(-0.6deg);
+  }
+
+  60% {
+    transform: translateX(-3px) rotate(0.4deg);
+  }
+
+  75% {
+    transform: translateX(-2px) rotate(0.2deg);
+  }
+}
